@@ -12,7 +12,7 @@
     "API",
     "Bookstore"
   ],
-  "author": "Jeisson Francois Rosas Céspedes <jeisson.rosas@bit.institute>",
+  "author": "Juan Alfonso Castro <juancf360@hotmail.com>",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
