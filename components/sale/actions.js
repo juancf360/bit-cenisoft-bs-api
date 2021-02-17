@@ -24,6 +24,24 @@ const getSale = (req, res) => {
     })
 }
 
+const getSales = (req, res) => {
+    let query = req.query
+    if (req.query.idClient) {
+      query = { idClient: new RegExp(`.*${req.query.idClient}.*`, 'i') }
+    }
+  
+    Sale.find(query, (error, sales) => {
+      if (error) {
+        res.status(404).send(error)
+      } else {
+        res.send(sales)
+      }
+    })
+  }
+
+
+
+
 const updateSale = (req, res) => {
     Sale.updateOne({ _id: req.params.id }, req.body, (error, result) => {
         if (error) {
@@ -47,4 +65,4 @@ const deleteSale = (req, res) => {
 
 
 
-module.exports = { createSale, getSale, updateSale, deleteSale }
+module.exports = { createSale, getSale, getSales, updateSale, deleteSale }
